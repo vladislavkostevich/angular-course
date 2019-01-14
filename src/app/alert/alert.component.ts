@@ -5,13 +5,36 @@ import {Component} from '@angular/core';
   templateUrl: './alert.component.html'
 })
 export class AlertComponent {
-  type = 'success';
-  message = 'Indicates a successful or positive action.';
-  visible = false;
+  alertType = 'success';
 
-  constructor() {
-    setTimeout(() => {
-      this.visible = true;
-    }, 3000);
+  getAlertClassesObject() {
+    return {
+      'alert-success': this.alertType === 'success',
+      'alert-danger': this.alertType === 'danger'
+    };
   }
+
+  getAlertContent() {
+    return this.alertType === 'success' ? 'Success Message' : 'Danger Message';
+  }
+
+  getButtonClassesObject() {
+    return {
+      'btn-danger': this.alertType === 'success',
+      'btn-success': this.alertType === 'danger'
+    };
+  }
+
+  getButtonContent() {
+    return this.alertType === 'success' ? 'Make It Danger' : 'Make It Success';
+  }
+
+  onButtonClick() {
+    if ('success' === this.alertType) {
+      this.alertType = 'danger';
+    } else {
+      this.alertType = 'success';
+    }
+  }
+
 }

@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {AlertComponent} from './alert/alert.component';
 import {DangerButtonComponent} from './danger-button/danger-button.component';
 import { CustomBindInputComponent } from './custom-bind-input/custom-bind-input.component';
-import { UsernameInputComponent } from './username-input/username-input.component';
+import { UsernameComponent } from './username/username.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { UsernameInputComponent } from './username-input/username-input.componen
     AlertComponent,
     DangerButtonComponent,
     CustomBindInputComponent,
-    UsernameInputComponent
+    UsernameComponent
   ],
   imports: [
     BrowserModule,

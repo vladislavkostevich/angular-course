@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-xs-12">
       <h3>This is the App Component!</h3>
-      <app-danger-button></app-danger-button>
-      <app-alert></app-alert>
-      <app-custom-bind-input></app-custom-bind-input>
+      <button class="btn bg-success" (click)="onAddAlert()">Add a new alert!</button>
+
+      <app-alert *ngFor="let alert of alerts"></app-alert>
     </div>
   </div>
 </div>

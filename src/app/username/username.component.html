@@ -1,0 +1,7 @@
+<input type="text" [(ngModel)]="username">
+<p>Username: {{ username }}</p>
+<button class="btn bg-info"
+        *ngIf="username !== ''"
+        (click)="onUsernameReset()">
+  Reset Username
+</button>
