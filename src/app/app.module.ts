@@ -3,18 +3,24 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 import {AppComponent} from './app.component';
-import {AlertComponent} from './alert/alert.component';
-import {DangerButtonComponent} from './danger-button/danger-button.component';
-import { CustomBindInputComponent } from './custom-bind-input/custom-bind-input.component';
-import { UsernameComponent } from './username/username.component';
+import { HeaderComponent } from './header/header.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
+import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
+import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlertComponent,
-    DangerButtonComponent,
-    CustomBindInputComponent,
-    UsernameComponent
+    HeaderComponent,
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeDetailsComponent,
+    RecipeItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent
   ],
   imports: [
     BrowserModule,
