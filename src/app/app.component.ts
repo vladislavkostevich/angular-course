@@ -6,9 +6,9 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  alerts = [1, 2, 3];
+  loadedFeature = 'recipe';
 
-  onAddAlert() {
-    this.alerts.push(this.alerts.length + 1);
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
   }
 }
