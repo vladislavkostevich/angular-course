@@ -9,8 +9,8 @@ import {Recipe} from '../recipe.model';
   styleUrls: ['./recipe-details.component.css']
 })
 export class RecipeDetailsComponent implements OnInit {
-  private recipeId: number;
-  private recipe: Recipe;
+  recipeId: number;
+  recipe: Recipe;
 
   constructor(
     private router: Router,
