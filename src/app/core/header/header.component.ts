@@ -1,33 +1,34 @@
-import {Component} from '@angular/core';
-import {DataStorageService} from '../../shared/data-storage.service';
-import {AuthService} from '../../auth/auth.service';
-import {HttpEvent} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../store/app.reducers';
+import {Observable} from 'rxjs';
+import {State} from '../../auth/store/auth.reducers';
+import {LogOut} from '../../auth/store/auth.actions';
+import {FetchRecipes, StoreRecipes} from '../../recipes/store/recipes.actions';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  authState: Observable<State>;
 
-  constructor(private dataStorageService: DataStorageService, private authService: AuthService) {
+  constructor(private store: Store<AppState>) {}
+
+  ngOnInit(): void {
+    this.authState = this.store.select('auth');
   }
 
   onSaveData() {
-    this.dataStorageService.storeRecipes().subscribe((response: HttpEvent<Object>): void => {
-        console.log(response);
-    });
+    this.store.dispatch(new StoreRecipes());
   }
 
   onFetchData() {
-    this.dataStorageService.getRecipes();
-  }
-
-  isAuthenticated() {
-    return this.authService.isAuthenticated();
+    this.store.dispatch(new FetchRecipes());
   }
 
   onLogOut() {
-    this.authService.logOut();
+    this.store.dispatch(new LogOut());
   }
 }
